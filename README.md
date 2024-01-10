@@ -6,18 +6,45 @@ This API allows you to retrieve and store weather forecasts provided by open-met
 
 - **POST `/Forecast`**
   - Pulls and stores forecast data by the input latitude and longitude from the request body and returns the forecast.
+  ```bash
+  curl -X POST -H "Content-Type: application/json" -d '{"latitude": "50.8503", "longitude": "4.3517"}' http://localhost:5266/Forecast
+  ```
+
 - **GET `/Forecast`**
   - Returns all stored weather forecasts.
+  ```bash
+  curl -X GET http://localhost:5266/Forecast
+  ```
+
 - **GET `/Forecast/{id}`**
   - Returns a specific weather forecast identified by `{id}`.
+  ```bash
+  curl -X GET http://localhost:5266/Forecast/1
+  ```
+
 - **DELETE `/Forecast/{id}`**
   - Deletes the weather forecast identified by `{id}`.
+  ```bash
+  curl -X DELETE http://localhost:5266/Forecast/1
+  ```
+
 - **PUT `/Forecast/{id}/update`**
   - Updates the weather forecast identified by `{id}` with fresh data.
+  ```bash
+  curl -X PUT -H "Content-Type: application/json" -d '{"latitude": "50.8503", "longitude": "4.3517"}' http://localhost:5266/Forecast/1/update
+  ```
+
 - **GET `/Forecast/{id}/refresh`**
   - Fetches the latest weather data for the forecast identified by `{id}`, updates the stored forecast, and returns the updated forecast.
+  ```bash
+  curl -X GET http://localhost:5266/Forecast/1/refresh
+  ```
+
 - **GET `/Forecast/history`**
   - Returns a hyperlinked HTML page with the history of all previously submitted latitudes and longitudes. Selecting a link calls `/Forecast/{id}/refresh`.
+  ```bash
+  curl -X GET http://localhost:5266/Forecast/history
+  ```
 
 ## Installation and Setup
 
@@ -28,13 +55,13 @@ This API allows you to retrieve and store weather forecasts provided by open-met
 
 The API will be available locally at http://localhost:5266/
 
-Testing is available using the Swagger UI at http://localhost:5266/swagger/index.html.
-
 The interactive history of all previously submitted latitudes and longitudes can be viewed in a browser at http://localhost:5266/Forecast/history
 
 ## Testing
 
 1. Run `dotnet test` to execute all tests
+
+API testing is available while the application is running using the Swagger UI at http://localhost:5266/swagger/index.html.
 
 A GitHub Actions workflow is configured to run tests on every push and pull request.
 
