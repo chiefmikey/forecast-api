@@ -41,7 +41,7 @@ This API allows you to retrieve and store weather forecasts provided by open-met
   ```
 
 - **GET `/Forecast/history`**
-  - Returns a hyperlinked HTML page with the history of all previously submitted latitudes and longitudes. Selecting a link calls `/Forecast/{id}/refresh`.
+  - Returns an HTML page with a hyperlinked history of all previously submitted latitudes and longitudes. Selecting a link calls `/Forecast/{id}/refresh`.
   ```bash
   curl -X GET http://localhost:5266/Forecast/history
   ```
