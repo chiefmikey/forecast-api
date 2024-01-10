@@ -63,7 +63,7 @@ The interactive history of all previously submitted latitudes and longitudes can
 
 API testing is available while the application is running using the Swagger UI at http://localhost:5266/swagger/index.html.
 
-A GitHub Actions workflow is configured to run tests on every push and pull request.
+A GitHub Actions workflow is configured to run unit tests on every push and pull request.
 
 ## Technology
 
