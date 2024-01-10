@@ -80,7 +80,6 @@ A GitHub Actions workflow is configured to run unit tests on every push and pull
 
 ## Future Improvements
 
-- Authentication and authorization
 - Enhanced error handling
 - Further separation of concerns
 - Rate limiting
