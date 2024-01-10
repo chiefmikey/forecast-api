@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forecast History</title>
+</head>
+<body>
+    <ul>
+        @foreach (var forecast in Model)
+        {
+            <li>
+                <a href="/Forecast/@forecast.Id/refresh">
+                    Latitude: @forecast.Latitude, Longitude: @forecast.Longitude
+                </a>
+            </li>
+        }
+    </ul>
+</body>
+</html>
