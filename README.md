@@ -81,6 +81,5 @@ A GitHub Actions workflow is configured to run unit tests on every push and pull
 - Authentication and authorization
 - Enhanced error handling
 - Further separation of concerns
-- Increase test coverage
 - Rate limiting
 - Debug logging
