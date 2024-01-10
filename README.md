@@ -50,8 +50,10 @@ This API allows you to retrieve and store weather forecasts provided by open-met
 
 1. Install .NET 7
 2. Clone into this repository
-3. Run `dotnet restore` to install dependencies
-4. Run `dotnet run --project WeatherForecastApi` to start the server
+3. `dotnet restore` to install dependencies
+4. `cd WeatherForecastApi && dotnet tool restore` to enable ef migrations
+5. `dotnet ef database update` to create the database
+6. `dotnet run --project WeatherForecastApi` to start the server
 
 The API will be available locally at http://localhost:5266/
 
