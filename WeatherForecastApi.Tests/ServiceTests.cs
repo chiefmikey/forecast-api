@@ -71,7 +71,6 @@ namespace WeatherForecastApi.Tests
 
         private void SetupSuccessfulResponse()
         {
-            // Set up the handler mock to return a successful response
             _handlerMock
             .Protected()
             .Setup<Task<HttpResponseMessage>>(
@@ -101,7 +100,6 @@ namespace WeatherForecastApi.Tests
 
         private void SetupUnsuccessfulResponse()
         {
-            // Set up the handler mock to return an unsuccessful response
             _handlerMock
             .Protected()
             .Setup<Task<HttpResponseMessage>>(

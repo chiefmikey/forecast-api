@@ -6,11 +6,10 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews(); // Add this line
-builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>(); // Add this line
-builder.Services.AddRazorPages().AddSessionStateTempDataProvider(); // Add this line
-builder.Services.AddSession(); // Add this line
+builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+builder.Services.AddRazorPages().AddSessionStateTempDataProvider();
+builder.Services.AddSession();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<ForecastDbContext>(options =>
@@ -20,7 +19,6 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new() { Title = "Weather Forecast API", Version = "v1" });
 });
 
-// Add health checks
 builder.Services.AddHealthChecks();
 
 builder.Services.AddHttpClient();
@@ -28,10 +26,8 @@ builder.Services.AddScoped<WeatherService>();
 
 var app = builder.Build();
 
-// Use session middleware
-app.UseSession(); // Add this line
+app.UseSession();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -42,14 +38,12 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// Use custom error handling middleware
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
 app.UseRouting();
 
-// Configure CORS policy
 app.UseCors(policy =>
     policy.AllowAnyOrigin()
            .AllowAnyMethod()
@@ -59,7 +53,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Map health checks
 app.MapHealthChecks("/health");
 
 app.Run();

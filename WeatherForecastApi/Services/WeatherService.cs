@@ -1,8 +1,6 @@
 using WeatherForecastApi.Models;
 using Newtonsoft.Json;
 
-// The WeatherService class is responsible for communicating with the weather API.
-// It uses IHttpClientFactory to manage the lifecycle of HttpClient instances.
 namespace WeatherForecastApi.Services
 {
     public class WeatherService

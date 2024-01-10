@@ -46,10 +46,8 @@ namespace WeatherForecastApi.Controllers
                 return NotFound();
             }
 
-            // Fetch new weather data
             var weatherData = await _weatherService.FetchWeatherData(forecast.Latitude, forecast.Longitude);
 
-            // Update the forecast object with the new weather data
             forecast.Daily = weatherData.Daily;
 
             await _context.SaveChangesAsync();
@@ -67,10 +65,8 @@ namespace WeatherForecastApi.Controllers
                 return NotFound();
             }
 
-            // Fetch new weather data
             var weatherData = await _weatherService.FetchWeatherData(forecast.Latitude, forecast.Longitude);
 
-            // Update the forecast object with the new weather data
             forecast.Daily = weatherData.Daily;
 
             await _context.SaveChangesAsync();

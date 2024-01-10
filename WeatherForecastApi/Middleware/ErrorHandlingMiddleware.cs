@@ -56,7 +56,6 @@ namespace WeatherForecastApi.Middleware
             return exception switch
             {
                 ArgumentException => HttpStatusCode.BadRequest,
-                // Add more cases here to handle other types of exceptions if necessary
                 _ => HttpStatusCode.InternalServerError
             };
         }
