@@ -1,4 +1,4 @@
-# Mikl + Duplo: Weather Forecast API
+Forecast API
 
 This API allows you to retrieve and store weather forecasts provided by open-meteo.com.
 
