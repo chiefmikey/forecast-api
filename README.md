@@ -31,7 +31,7 @@ This API allows you to retrieve and store weather forecasts provided by open-met
 - **PUT `/Forecast/{id}/update`**
   - Updates the weather forecast identified by `{id}` with fresh data.
   ```bash
-  curl -X PUT -H "Content-Type: application/json" -d '{"latitude": "50.8503", "longitude": "4.3517"}' http://localhost:5266/Forecast/1/update
+  curl -X PUT http://localhost:5266/Forecast/1/update
   ```
 
 - **GET `/Forecast/{id}/refresh`**
